@@ -27,9 +27,13 @@ end
 
 
 # sum and return the two biggest numbers in the array
-def sum_to_n?(n, numbers=[])
+def sum_to_n?(numbers, n)
 	if numbers.length == 0
-		return true
+		if n == 0
+			return true
+		else
+			return false
+		end
 	else
 		return numbers.permutation(2).any?{|pair| pair.inject(:+) == n}
 	end
